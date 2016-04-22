@@ -5,6 +5,7 @@ module.exports = App;
 
 function App (initialState) {
   var state = Struct({
+
   });
 
   return state;

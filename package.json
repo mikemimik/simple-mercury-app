@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "semistandard && tape './src/**/test.js' | tap-spec",
-    "run": "budo index.js --open --live"
+    "start": "budo index.js --open --live"
   },
   "author": "Michael Perrotte",
   "license": "GPL-3.0",
