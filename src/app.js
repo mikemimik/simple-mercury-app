@@ -15,6 +15,7 @@ module.exports = App;
 function App (initialState) {
   var state = Struct({
     title: Value('Simple Mercury App'),
+
     route: Router()
   });
 

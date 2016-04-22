@@ -12,6 +12,9 @@ function navigation() {
       anchor({ href: '/' }, 'Home')
     ]),
     h('li', [
+      anchor({ href: '/data' }, 'Data Route')
+    ]),
+    h('li', [
       anchor({ href: '/list' }, 'List')
     ]),
     h('li', [
