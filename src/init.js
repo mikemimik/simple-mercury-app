@@ -1,3 +1,5 @@
+'use strict';
+
 var Document = require('nhg/document');
 var StartApp = require('nhg/app');
 var App = require('./app');

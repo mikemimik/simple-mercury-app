@@ -1,3 +1,5 @@
+'use strict';
+
 var h = require('nhg/h');
 
 // Components

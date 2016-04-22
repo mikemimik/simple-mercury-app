@@ -1,3 +1,5 @@
+'use strict';
+
 var h = require('nhg/h');
 var Router = require('mercury-router');
 var anchor = Router.anchor;

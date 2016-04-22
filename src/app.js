@@ -1,3 +1,5 @@
+'use strict';
+
 var Struct = require('nhg/struct');
 var h = require('nhg/h');
 var Value = require('nhg/value');
