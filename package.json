@@ -16,6 +16,7 @@
     "tape": "^4.5.1"
   },
   "dependencies": {
+    "mercury-router": "^1.4.0",
     "nhg": "^0.3.1"
   }
 }
