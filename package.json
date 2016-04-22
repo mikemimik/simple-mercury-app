@@ -4,8 +4,13 @@
   "description": "first app with mercury",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "semistandard && tape './src/**/test.js' | tap-spec"
   },
   "author": "Michael Perrotte",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "semistandard": "^7.0.5",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  }
 }
