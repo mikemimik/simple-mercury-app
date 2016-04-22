@@ -1,13 +1,17 @@
 'use strict';
 
 var h = require('nhg/h');
-var Struct = require('nhg/struct');
+var State = require('nhg/state');
 
 module.exports = home;
 
 function home(initState) {
-  var state = Struct({
-
+  var state = State({
+    items: [
+      { name: 'one' },
+      { name: 'two' },
+      { name: 'three' }
+    ]
   });
 
   return state;
@@ -16,7 +20,13 @@ function home(initState) {
 home.render = function render(state) {
   return h('div', [
     h('h1', 'Home Component'),
-    h('span', 'This is cool beans.'),
+    h('ul', state.items.map(function toItem(item) {
+      return h('li', [
+        h('span', item.name)
+      ]);
+    })),
+    // below is testing
+    h('hr'),
     h('div', [
       h('h3', [ 'inspecting objects']),
       h('p', 'this: ' + JSON.stringify(this)),
