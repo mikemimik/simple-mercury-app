@@ -9,7 +9,7 @@ var home = require('./components/home');
 
 module.exports = App;
 
-function App (initialState) {
+function App(initialState) {
   var state = Struct({
     title: Value('Simple Mercury App')
   });
@@ -17,9 +17,9 @@ function App (initialState) {
   return state;
 }
 
-App.render = function (state) {
+App.render = function render(state) {
   return h('div', [
     h('h1', state.title),
-    home.render(state)
+    home()
   ]);
 };
