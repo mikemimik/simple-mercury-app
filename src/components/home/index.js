@@ -1,23 +1,25 @@
 'use strict';
 
-var h = require('nhg/h');
-var State = require('nhg/state');
+const State = require('nhg/state');
+const h = require('nhg/h');
 
-var List = require('../../components/list');
+// Components
+const List = require('../../components/list');
 
-module.exports = home;
+module.exports = Home;
 
-function home(initState) {
-  var state = State({
+function Home() {
+  let state = State({
     list: List()
   });
 
   return state;
 };
 
-home.render = function render(state) {
+Home.render = function render(state) {
   return h('div', [
-    h('h1', 'Home Component'),
+    h('h2', 'Home Component'),
+    h('span', 'Home.render(state): ' + JSON.stringify(state)),
     List.render(state.list)
   ]);
-}
+};

@@ -1,18 +1,21 @@
 'use strict';
 
-var State = require('nhg/state');
-var h = require('nhg/h');
+const State = require('nhg/state');
+const h = require('nhg/h');
+const Struct = require('nhg/struct');
+const Value = require('nhg/value');
 
 module.exports = Item;
 
-function Item(initState) {
-  var state = State({
-
+function Item(data) {
+  data = data || {};
+  let state = State({
+    title: Value(data.title || 'no-data')
   });
 
   return state;
 }
 
 Item.render = function render(state) {
-  return h('li', state.name);
+  return h('li', state.title);
 }

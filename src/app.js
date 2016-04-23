@@ -1,27 +1,27 @@
 'use strict';
 
-var State = require('nhg/state');
-var h = require('nhg/h');
-var Value = require('nhg/value');
+const State = require('nhg/state');
+const h = require('nhg/h');
+const Value = require('nhg/value');
 
 // Components
-var home = require('./components/home');
-var addItem = require('./components/add-item');
+const Home = require('./components/home');
 
 module.exports = App;
 
-function App(initialState) {
-  var state = State({
-    title: Value('Simple Mercury App')
+function App() {
+  let state = State({
+    title: Value('Simple Mercury App'),
+    home: Home()
   });
 
   return state;
-}
+};
 
 App.render = function render(state) {
   return h('div', [
     h('h1', state.title),
-    home.render(state),
-    // addItem()
+    h('span', 'App.render(state): ' + JSON.stringify(state)),
+    Home.render(state.home)
   ]);
 };

@@ -1,27 +1,37 @@
 'use strict';
 
-var State = require('nhg/state');
-var h = require('nhg/h');
-var Array = require('nhg/array');
+const State = require('nhg/state');
+const h = require('nhg/h');
+const Array = require('nhg/array');
+const Struct = require('nhg/struct');
 
-var Item = require('../../components/item');
+const Item = require('../../components/item');
 
 module.exports = List;
 
-function List(initState) {
-  var state = State({
+function List() {
+  var state = Struct({
     items: Array([
-      Item({name: 'one'}),
-      Item({name: 'two'}),
-      Item({name: 'three'})
+      Item({title: 'one'}),
+      Item({title: 'two'}),
+      Item({title: 'three'})
     ])
   });
-}
+
+  return state;
+};
 
 List.render = function render(state) {
-  return h('ul', state.items.map(
-    function itemRender(item) {
-      return Item.render(item.name);
-    })
-  );
+
+  return h('div', [
+    h('h3', 'List Component'),
+    h('div', 'List.render(state): ' + JSON.stringify(state)),
+    h('ul', renderItems(state.items))
+  ]);
+};
+
+function renderItems(items) {
+  return items.map(function render(item) {
+    return Item.render(item);
+  });
 };

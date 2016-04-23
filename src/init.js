@@ -1,13 +1,13 @@
 'use strict';
 
-var Document = require('nhg/document');
-var StartApp = require('nhg/app');
-var App = require('./app');
+const Document = require('nhg/document');
+const StartApp = require('nhg/app');
+const App = require('./app');
 
 module.exports = Init;
 
 function Init () {
-  var state = App();
+  let state = App();
 
   return StartApp(Document.body, state, App.render);
 }
