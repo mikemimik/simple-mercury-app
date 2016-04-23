@@ -9,16 +9,16 @@ const Home = require('./components/home');
 
 module.exports = App;
 
-function App() {
+function App () {
   let state = State({
     title: Value('Simple Mercury App'),
     home: Home()
   });
 
   return state;
-};
+}
 
-App.render = function render(state) {
+App.render = function render (state) {
   return h('div', [
     h('h1', state.title),
     h('span', 'App.render(state): ' + JSON.stringify(state)),

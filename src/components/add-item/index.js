@@ -1,13 +1,13 @@
 'use strict';
 
-var h = require('nhg/h');
-var State = require('nhg/state');
-var Send = require('nhg/send');
+const h = require('nhg/h');
+const State = require('nhg/state');
+const Send = require('nhg/send');
 
 module.exports = addItem;
 
-function addItem(state) {
-  var state = State({
+function addItem (data) {
+  let state = State({
     channels: {
       click: doSomething
     }
@@ -16,10 +16,14 @@ function addItem(state) {
   return state;
 }
 
-addItem.render = function render(state) {
+function doSomething () {
+
+}
+
+addItem.render = function render (state) {
   return h('input.button', {
     type: 'button',
     value: 'Add',
-    'ev-click': Send(someState.channels.click, 'some data')
+    'ev-click': Send(state.channels.click, 'some data')
   });
 };
