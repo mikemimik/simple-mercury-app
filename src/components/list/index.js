@@ -17,6 +17,10 @@ function List () {
     ])
   });
 
+  setTimeout(function mockAsync() {
+    state.items.push(Item({title: 'async-four'}));
+  }, 3000);
+
   return state;
 }
 
