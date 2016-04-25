@@ -7,6 +7,10 @@
     "test": "semistandard && tape './src/**/test.js' | tap-spec",
     "start": "budo index.js --open --live"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mikemimik/simple-mercury-app.git"
+  },
   "author": "Michael Perrotte",
   "license": "GPL-3.0",
   "devDependencies": {
