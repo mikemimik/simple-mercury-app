@@ -11,14 +11,14 @@ module.exports = List;
 function List () {
   var state = State({
     items: Array([
-      Item({title: 'one'}),
-      Item({title: 'two'}),
-      Item({title: 'three'})
+      Item({ title: 'one' }),
+      Item({ title: 'two' }),
+      Item({ title: 'three' })
     ])
   });
 
-  setTimeout(function mockAsync() {
-    state.items.push(Item({title: 'async-four'}));
+  setTimeout(function mockAsync () {
+    state.items.push(Item({ title: 'async-four' }));
   }, 3000);
 
   return state;
@@ -33,7 +33,7 @@ List.render = function render (state) {
 };
 
 function renderItems (items) {
-  return items.map(function render (item) {
+  return items.map(function renderEach (item) {
     return Item.render(item);
   });
 }
